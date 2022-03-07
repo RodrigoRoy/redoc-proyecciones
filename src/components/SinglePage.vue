@@ -30,30 +30,33 @@
           <p class="body-1 mt-10" style="font-size: 1.15rem !important">
             La lengua materna es aquella que se enseña desde el nacimiento, con la que se conoce el mundo, se interactúa y se desarrolla el pensamiento. Las lenguas son signo de identidad y pertenencia, se crean y transmiten en comunidad. Tienen dimensiones cognitivas individuales y sociales, de trascendencia psicológica y política. A través de ellas se expresa y transmite cultura, saberes, ideología, religión, tradiciones, costumbres, valores, creencias, etc. Como señala Nidia López García (poeta Tuún Savi) “Una lengua no sólo te permite comunicarte sino ser poseedora de una herencia; es otra forma de hacer mundo.” Se estima que en el mundo existen alrededor de 7079 lenguas, de las que el 43% se encuentra en peligro de desaparición. La totalidad de éste porcentaje corresponde a lenguas nativas, es decir, aquellas que son habladas por pueblos originarios de un territorio. Este ciclo celebra la diversidad de las lenguas y su soberanía.
           </p>
+          <p @click="showInfoLenguas = !showInfoLenguas">Mostrar más información</p>
 
-          <h2 class="display-1 font-weight-light mt-8">
-            Conversatorio en línea
-          </h2>
-          <h3 class="headline font-weight-light">
-            23 de febrero, 16 hrs. (Ciudad de México)
-          </h3>
-          <p>
-            <strong>Guillermo Monteforte</strong> (moderador, Ojo de Agua Comunicación)<br/> 
-            <strong>Nute Kuijin</strong> (realizador de <em>Tu'un Savi</em>)<br/>
-            <strong>Henry Cuesta</strong> (Cimarrones Producciones, realizadora de la serie <em>Guardianas resilientes desde el cuerpo y el alma</em>)<br/>
-            <strong>Sergio Julián Caballero</strong> (realizador de <em>Justicia sin palabras</em>)<br/>
-            <strong>Gabriel Sánchez Cruz</strong> (intérprete de CEPIADET y guionista)
-          </p>
-          <p>
-            <v-btn class="ma-2" color="red" dark href="https://www.youtube.com/c/REDOCInvestigaci%C3%B3n" target="_blank">
-              <v-icon large dark right class="ml-2 mr-4">mdi-youtube</v-icon>
-              ReDOC Investigación
-            </v-btn>
-            <v-btn class="ma-2" color="indigo" dark href="https://www.facebook.com/Institutomora" target="_blank">
-              <v-icon large dark right class="ml-2 mr-4">mdi-facebook</v-icon>
-              Instituto Mora
-            </v-btn>
-          </p>
+          <div v-show="showInfoLenguas">
+            <h2 class="display-1 font-weight-light mt-8">
+              Conversatorio en línea
+            </h2>
+            <h3 class="headline font-weight-light">
+              23 de febrero, 16 hrs. (Ciudad de México)
+            </h3>
+            <p>
+              <strong>Guillermo Monteforte</strong> (moderador, Ojo de Agua Comunicación)<br/> 
+              <strong>Nute Kuijin</strong> (realizador de <em>Tu'un Savi</em>)<br/>
+              <strong>Henry Cuesta</strong> (Cimarrones Producciones, realizadora de la serie <em>Guardianas resilientes desde el cuerpo y el alma</em>)<br/>
+              <strong>Sergio Julián Caballero</strong> (realizador de <em>Justicia sin palabras</em>)<br/>
+              <strong>Gabriel Sánchez Cruz</strong> (intérprete de CEPIADET y guionista)
+            </p>
+            <p>
+              <v-btn class="ma-2" color="red" dark href="https://youtu.be/RSYKr9WunSg" target="_blank">
+                <v-icon large dark right class="ml-2 mr-4">mdi-youtube</v-icon>
+                ReDOC Investigación
+              </v-btn>
+              <v-btn class="ma-2" color="indigo" dark href="https://www.facebook.com/Institutomora/videos/lais-y-redoc-investigaci%C3%B3n-invitan-al-ciclo-de-isla-tortuga-al-abya-yala/348878433782954" target="_blank">
+                <v-icon large dark right class="ml-2 mr-4">mdi-facebook</v-icon>
+                Instituto Mora
+              </v-btn>
+            </p>
+          </div>
         </v-col>
       </v-row>
     </v-parallax>
@@ -72,7 +75,7 @@
         <v-flex xs12 class="text-center">
           <v-hover v-slot="{ hover }">
             <v-carousel v-model="carousel" fluid delimiter-icon="mdi-movie" show-arrows-on-hover :cycle="!hover" hide-delimiters :show-arrows="false" interval="10000" class="py-0">
-              <v-carousel-item v-for="(documental, i) in documentales" :key="i">
+              <v-carousel-item v-for="(documental, i) in documentalesLengua" :key="i">
                 <!-- Cada elemento del carrusel serán dos columnas con información e imagen -->
                 <v-sheet color="rgba(0,0,0,0.7)" height="100%" tile>
                   <v-row class="fill-height" align="center" justify="center">
@@ -242,8 +245,9 @@ export default {
       offset: 0,
       easing: 'easeInOutCubic',
     },
-    carousel: 0, // indice del elemento en carrusel que se muestra
-    documentales: [ // documentales para sala de proyecciones
+    carousel: 0, // indice del elemento en carrusel que se muestra,
+    showInfoLenguas: false, // muestra/oculta información adicional sobre el bloque Lenguas maternas
+    documentalesLengua: [ // documentales para sala de proyecciones (Lengua)
       {
         name: 'Tu’un Savi',
         altName: '',
@@ -355,6 +359,137 @@ export default {
         language: 'Matis',
         subtitle: 'Portugués',
         tags: ['Intergeneracional']
+      }
+    ],
+    documentalesMatriarquia: [ // documentales para sala de proyecciones (Matriarquia)
+      { // 1
+        name: 'Her silent life',
+        altName: 'Su vida silenciosa',
+        author: 'Lindsay McIntyre',
+        year: '2012',
+        country: 'Canadá',
+        time: '31',
+        genre: '',
+        plot: 'Tres generaciones de mujeres se revelan en este viaje intuitivo al pasado de una familia. Combinando técnicas cinematográficas analógicas con entrevistas personales, la directora Lindsay McIntyre crea una exploración impresionista de su herencia mixta inuit y las controversias que rodean la historia de su familia.',
+        link: 'https://vimeo.com/41359172',
+        image: 'Placeholder1.jpg',
+        color: 'indigo',
+        language: 'Inglés',
+        subtitle: 'Inglés',
+        tags: ['', '']
+      },
+      { // 2
+        name: 'KaYaMenTa',
+        altName: '',
+        author: 'Jules Koostachin',
+        year: '2020',
+        country: 'Canadá',
+        time: '19',
+        genre: '',
+        plot: 'Cinco mujeres indígenas se reúnen para compartir comida e historias sobre una etapa de la vida con poco apoyo o conocimiento compartido. KaYaMenTa invita a nuestras hermanas y a nuestros televidentes a enfrentar sus propios miedos de envejecer y aborda el tabú en torno a la menopausia a través de la lente de una mujer indígena, una que se involucra con la sexualidad, el envejecimiento, la espiritualidad y la curación.',
+        link: 'https://youtu.be/iIb3fd9jGkY',
+        image: 'Placeholder2.jpg',
+        color: 'indigo',
+        language: 'Inglés',
+        subtitle: 'Inglés',
+        tags: ['', '']
+      },
+      { // 3
+        name: 'Ati-wîcahsin (It’s Getting Easier)',
+        altName: 'Ati-wîcahsin (Cada vez es más fácil)',
+        author: 'Tessa Desnomie',
+        year: '2007',
+        country: 'Canadá',
+        time: '6',
+        genre: '',
+        plot: 'En este cortometraje, la cineasta Tessa Desnomie celebra la vida y la época de su abuela, Jane Merasty. Nacida y criada en la trampa, esta mujer Woodlands Cree ha sido testigo de cambios significativos a lo largo de sus vigorosos 80 años.',
+        link: 'https://www.nfb.ca/film/first_stories_its_getting_easier/',
+        image: 'Placeholder1.jpg',
+        color: 'indigo',
+        language: 'Inglés',
+        subtitle: 'Inglés',
+        tags: ['', '']
+      },
+      { // 4
+        name: 'Mother of Many Children',
+        altName: 'Madre de muchos hijos',
+        author: 'Alanis Obomsawin',
+        year: '1977',
+        country: 'Canadá',
+        time: '57',
+        genre: '',
+        plot: 'En su primer largometraje documental, estrenado en 1977, Alanis Obomsawin honra el lugar central de las mujeres y las madres dentro de las culturas indígenas. Un álbum de la feminidad indígena, la película retrata orgullosas culturas matriarcales que durante siglos han sido presionadas para adoptar los estándares y costumbres de la sociedad dominante. Siguiendo el ciclo de vida de las mujeres indígenas desde el nacimiento hasta la niñez, la pubertad, la adultez joven, la madurez y la vejez, la película revela cómo las mujeres indígenas han luchado por recuperar un sentido de igualdad, inculcaron el orgullo cultural en sus hijos y transmitieron sus historias y su idioma. a las nuevas generaciones.',
+        link: 'https://www.nfb.ca/film/mother_of_many_children/',
+        image: 'Placeholder2.jpg',
+        color: 'indigo',
+        language: 'Inuit, cree',
+        subtitle: 'Inglés',
+        tags: ['', '']
+      },
+      { // 5
+        name: 'I am Hitkoak',
+        altName: 'Yo soy Hitkoak',
+        author: 'Adine Tabitha',
+        year: '2018',
+        country: 'Canadá',
+        time: '6',
+        genre: '',
+        plot: 'Hitkoak describe su juventud: la comida que comía, los juguetes con los que creció y los valores que aprendió de sus mayores. Ahora, los transmite a los jóvenes de su comunidad.',
+        link: 'https://youtu.be/TxmnBzUVStc',
+        image: 'Placeholder1.jpg',
+        color: 'indigo',
+        language: 'Inuit',
+        subtitle: 'Inglés',
+        tags: ['', '']
+      },
+      { // 6
+        name: 'Cartas para Ana',
+        altName: '',
+        author: 'Lina Gaitán',
+        year: '2021',
+        country: 'Colombia',
+        time: '25',
+        genre: '',
+        plot: 'En este volumen, Ana Bolena Rodríguez, una mujer afrocolombiana y madre de un adolescente en el trastorno del espectro autista (TEA), relata los múltiples retos que enfrenta en una sociedad excluyente y discapacitante.',
+        // link: 'https://youtu.be/78oSDeeb3lw',
+        link: 'https://vimeo.com/525869880',  // Subtítulos en inglés
+        image: 'Placeholder2.jpg',
+        color: 'indigo',
+        language: 'Español',
+        subtitle: 'Inglés',
+        tags: ['', '']
+      },
+      { // 7
+        name: 'Los que están por nacer',
+        altName: '',
+        author: 'Yovegami Ascona Mora, Sinhué Ascona Mora',
+        year: '2018',
+        country: 'México',
+        time: '11',
+        genre: '',
+        plot: 'Los rituales de la cultura ayuuk que dan la bienvenida a una nueva vida, ahora están haciendo eco en el futuro incierto de la Tierra. En la región mixe de Oaxaca, una abuela está preocupada por el mundo en que nacerá su bisnieto.',
+        link: 'https://vimeo.com/674246433',
+        image: 'Placeholder1.jpg',
+        color: 'indigo',
+        language: 'Mixe',
+        subtitle: 'Español',
+        tags: ['', '']
+      },
+      { // 8
+        name: 'Yãmĩyhex: As Mulheres-Espírito',
+        altName: '',
+        author: 'Sueli Maxakali, Isael Maxakali',
+        year: '2019',
+        country: 'Brasil',
+        time: '116',
+        genre: '',
+        plot: 'Sueli e Isael Maxakali son una pareja de cineastas del pueblo indígena Tikmũ\'ũn (Maxakali), habitantes de Vale do Mucuri, Minas Gerais, Brasil. En los últimos años, la pareja se ha dedicado a filmar la historia y los rituales de su pueblo. Juntas codirigieron las películas "Cuando los yãmĩy vienen a bailar con nosotros" (2011) y "Yãmĩyhex: las mujeres espíritu" (2019).',
+        link: '',
+        image: 'Placeholder2.jpg',
+        color: 'indigo',
+        language: 'Maxakali',
+        subtitle: 'Portugués',
+        tags: ['', '']
       }
     ],
     tab: null,
