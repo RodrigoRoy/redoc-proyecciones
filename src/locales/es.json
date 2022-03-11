@@ -1,0 +1,12 @@
+{
+  "header": {
+    "inicio": "Inicio",
+    "lenguasMaternas": "Lenguas Maternas",
+    "matriarquia": "Matriarquía",
+    "territorio": "Territorio",
+    "idioma": "Idiomas"
+  },
+  "footer": {
+      "encabezado": "Curaduría fílmica y organización"
+  }
+}

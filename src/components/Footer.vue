@@ -4,7 +4,7 @@
         <v-flex xs12>
             <div class="d-flex grey--text text--darken-2 ml-4 text-center justify-center">
                 <p class="text-body-1 mt-6 mb-6">
-                    <span class="text-h6">Curaduría fílmica y organización</span> <br>
+                    <span class="text-h6">{{ $t('footer.encabezado') }}</span> <br>
                     Sarah Shamash <span class="font-weight-light">(Universidad de Columbia Británica) </span><br>
                     Lilia García Torres <span class="font-weight-light">(LAIS-Instituto Mora) </span><br>
                     Oswaldo A. Lara Orozco <span class="font-weight-light">(FCPyS-UNAM) </span><br>

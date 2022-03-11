@@ -11,35 +11,18 @@
 
       <v-spacer></v-spacer>
 
-      <div v-if="language === 'es'">
-        <v-btn text @click="$vuetify.goTo('#parallax1', options)">
-          <span class="mr-2">{{ spanish.inicio }}</span>
-        </v-btn>
-        <v-btn text @click="$vuetify.goTo('#parallax2', options)">
-          <span class="mr-2">{{ spanish.lenguasMaternas }}</span>
-        </v-btn>
-        <v-btn text @click="$vuetify.goTo('#parallax3', options)">
-          <span class="mr-2">{{ spanish.matriarquia }}</span>
-        </v-btn>
-        <v-btn text @click="$vuetify.goTo('#parallax4', options)">
-          <span class="mr-2">{{ spanish.territorio }}</span>
-        </v-btn>
-      </div>
-
-      <div v-if="language === 'en'">
-        <v-btn text @click="$vuetify.goTo('#parallax1', options)">
-          <span class="mr-2">{{ english.inicio }}</span>
-        </v-btn>
-        <v-btn text @click="$vuetify.goTo('#parallax2', options)">
-          <span class="mr-2">{{ english.lenguasMaternas }}</span>
-        </v-btn>
-        <v-btn text @click="$vuetify.goTo('#parallax3', options)">
-          <span class="mr-2">{{ english.matriarquia }}</span>
-        </v-btn>
-        <v-btn text @click="$vuetify.goTo('#parallax4', options)">
-          <span class="mr-2">{{ english.territorio }}</span>
-        </v-btn>
-      </div>
+      <v-btn text @click="$vuetify.goTo('#parallax1', options)">
+        <span class="mr-2">{{ $t('header.inicio') }}</span>
+      </v-btn>
+      <v-btn text @click="$vuetify.goTo('#parallax2', options)">
+        <span class="mr-2">{{ $t('header.lenguasMaternas') }}</span>
+      </v-btn>
+      <v-btn text @click="$vuetify.goTo('#parallax3', options)">
+        <span class="mr-2">{{ $t('header.matriarquia') }}</span>
+      </v-btn>
+      <v-btn text @click="$vuetify.goTo('#parallax4', options)">
+        <span class="mr-2">{{ $t('header.territorio') }}</span>
+      </v-btn>
 
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
@@ -48,12 +31,12 @@
             v-bind="attrs"
             v-on="on"
           >
-            Idiomas
+            {{ $t('header.idioma') }}
           </v-btn>
         </template>
         <v-list class="pointerCursor">
           <v-list-item v-for="(item, index) in items" :key="index">
-            <v-list-item-title @click="changeLanguage(item.lang)">{{ item.language }}</v-list-item-title>
+            <v-list-item-title @click="switchLocale(item.lang)">{{ item.language }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
@@ -89,6 +72,13 @@ export default {
   },
 
   data: () => ({
+    // Configuración adicional para el movimiento de pantalla en menús de navbar
+    options: {
+      duration: 900,
+      offset: 0,
+      easing: 'easeInOutCubic',
+    },
+    // Idiomas del sistema
     items: [
       {
         language: 'Español',
@@ -99,29 +89,13 @@ export default {
         lang: 'en'
       }
     ],
-    // Configuración adicional para el movimiento de pantalla en menús de navbar
-    options: {
-      duration: 900,
-      offset: 0,
-      easing: 'easeInOutCubic',
-    },
-    spanish: {
-      inicio: "Inicio",
-      lenguasMaternas: "Lenguas Maternas",
-      matriarquia: "Matriarquía",
-      territorio: "Territorio"
-    },
-    english: {
-      inicio: "Main",
-      lenguasMaternas: "Mother Tongues",
-      matriarquia: "Matriarchy",
-      territorio: "Territory"
-    },
-    language: "es",
   }),
   methods: {
-    changeLanguage(newLanguage){
-      this.language = newLanguage;
+    // Cambia el idioma del sistema
+    switchLocale(locale) {
+      if (this.$i18n.locale !== locale) {
+        this.$i18n.locale = locale;
+      }
     }
   }
 };
@@ -130,5 +104,8 @@ export default {
 <style scoped>
 .pointerCursor{
   cursor: pointer;
+}
+.pointerCursor :hover{
+  background-color: #E4E0E0;
 }
 </style>
