@@ -1,16 +1,16 @@
 <template>
   <v-content>
     <!-- Acerca de las proyecciones -->
-    <v-parallax src="@/assets/Background1.jpg" height="700" class="mt-n12" id="parallax1">
+    <v-parallax src="@/assets/Background1.jpg" :height="initHeight" class="mt-n12" id="parallax1">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h2 class="display-3 font-weight-medium">
+          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 font-weight-medium">
             Diálogos documentales de Isla Tortuga al Abya Yala
           </h2>
-          <h3 class="display-2 font-weight-thin mt-4">
+          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
             <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax2', options)">Lengua</a>, <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax3', options)">matriarquía</a> y <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax4', options)">territorio</a>
           </h3>
-          <p class="body-1 mt-12" style="font-size: 1.15rem !important">
+          <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-12">
             La lucha y resistencia de los pueblos originarios que habitan Isla Tortuga y el Abya Yala, así como los pueblos afrodescendientes en las Américas, se ha dirigido a problemáticas comunes en función de sus particularidades geopolíticas en permanente cambio. Entre ellas, la conservación del territorio, la revitalización de la lengua y la participación de las mujeres en las estrategias de cohesión y empoderamiento. En las últimas décadas, una estrategia recurrente de estos pueblos ha sido el empleo del video y el cine documental como herramientas no violentas de resistencia política y soberanía representacional que buscan visibilizar las problemáticas que enfrentan. Es así que desde la perspectiva de la investigación sobre el documental, como campo de estudio expandido, nos parece relevante suscitar espacios de reflexión y sensibilización en torno al irreductible papel que adquiere el empleo de estas herramientas en la organización e interacción política de estas comunidades, así como su lucha por la soberanía.
           </p>
         </v-col>
@@ -18,16 +18,16 @@
     </v-parallax>
 
     <!-- Sala de proyecciones #1 -->
-    <v-parallax src="@/assets/Background2.jpg" height="700" id="parallax2">
+    <v-parallax src="@/assets/Background2.jpg" :height="parallaxHeight" id="parallax2">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h2 class="display-3 font-weight-medium">
+          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 font-weight-medium">
             Lenguas maternas
           </h2>
-          <h3 class="display-2 font-weight-thin mt-4">
+          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
             14 al 28 de febrero de 2022
           </h3>
-          <p class="body-1 mt-10" style="font-size: 1.15rem !important">
+          <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
             La lengua materna es aquella que se enseña desde el nacimiento, con la que se conoce el mundo, se interactúa y se desarrolla el pensamiento. Las lenguas son signo de identidad y pertenencia, se crean y transmiten en comunidad. Tienen dimensiones cognitivas individuales y sociales, de trascendencia psicológica y política. A través de ellas se expresa y transmite cultura, saberes, ideología, religión, tradiciones, costumbres, valores, creencias, etc. Como señala Nidia López García (poeta Tuún Savi) “Una lengua no sólo te permite comunicarte sino ser poseedora de una herencia; es otra forma de hacer mundo.” Se estima que en el mundo existen alrededor de 7079 lenguas, de las que el 43% se encuentra en peligro de desaparición. La totalidad de éste porcentaje corresponde a lenguas nativas, es decir, aquellas que son habladas por pueblos originarios de un territorio. Este ciclo celebra la diversidad de las lenguas y su soberanía.
           </p>
           <p>
@@ -36,20 +36,20 @@
 
           <v-expand-transition>
             <div v-show="show.lengua">
-              <h2 class="display-1 font-weight-light mt-8">
+              <h2 class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h3 font-weight-regular mt-8"> 
                 Conversatorio en línea
               </h2>
-              <h3 class="headline font-weight-light">
+              <h3 class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h5 text-xl-h4 font-weight-light mb-2">
                 23 de febrero, 16 hrs. (Ciudad de México)
               </h3>
-              <p>
+              <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
                 <strong>Guillermo Monteforte</strong> (moderador, Ojo de Agua Comunicación)<br/> 
                 <strong>Nute Kuijin</strong> (realizador de <em>Tu'un Savi</em>)<br/>
                 <strong>Henry Cuesta</strong> (Cimarrones Producciones, realizadora de la serie <em>Guardianas resilientes desde el cuerpo y el alma</em>)<br/>
                 <strong>Sergio Julián Caballero</strong> (realizador de <em>Justicia sin palabras</em>)<br/>
                 <strong>Gabriel Sánchez Cruz</strong> (intérprete de CEPIADET y guionista)
               </p>
-              <p>
+              <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
                 <v-btn class="ma-2" color="red" dark href="https://youtu.be/RSYKr9WunSg" target="_blank">
                   <v-icon large dark right class="ml-2 mr-4">mdi-youtube</v-icon>
                   ReDOC Investigación
@@ -66,12 +66,11 @@
     </v-parallax>
 
     <!-- Sala de proyecciones #1 -->
-    <!-- <section id="sala1" style="background-color: rgba(0, 0, 0, 0.45)"> -->
     <v-expand-transition>
       <section id="sala1" v-show="show.lengua" class="cyan lighten-1 my-n12 py-4" style="background: linear-gradient(180deg, rgba(0,77,64,1) 0%, rgba(13,71,161,1) 100%);">
         <v-layout column wrap class="my-12 py-12" align-center>
           <v-flex xs12 class="text-center">
-            <h2 class="display-3 mt-4 mb-4 white--text">
+            <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 mt-4 mb-4 white--text">
               Sala de proyecciones
             </h2>
           </v-flex>
@@ -79,7 +78,7 @@
           <!-- Carrusel con información del documental -->
           <v-flex xs12 class="text-center">
             <v-hover v-slot="{ hover }">
-              <v-carousel v-model="carousel.lengua" fluid delimiter-icon="mdi-movie" show-arrows-on-hover :cycle="!hover" hide-delimiters :show-arrows="false" interval="10000" class="py-0">
+              <v-carousel v-model="carousel.lengua" delimiter-icon="mdi-movie" show-arrows-on-hover :cycle="!hover" hide-delimiters :show-arrows="false" interval="10000" class="py-0">
                 <v-carousel-item v-for="(documental, i) in documentalesLengua" :key="i">
                   <!-- Cada elemento del carrusel serán dos columnas con información e imagen -->
                   <v-sheet color="rgba(0,0,0,0.7)" height="100%" tile>
@@ -87,30 +86,30 @@
                       <div>
                         <v-container>
                           <v-row align="center">
-                            <v-col sm="12" md="5" offset-md="1">
+                            <v-col xs="12" sm="12" md="5" offset-md="1">
                               <!-- Información del documental -->
-                              <p class="text-h4 font-weight-medium white--text">
+                              <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h3 font-weight-medium white--text">
                                 <a class="white--text text-decoration-underline" :href="documental.link" target="_blank">
                                   {{ documental.name }}
                                 </a>
                               </p>
-                              <p v-if="documental.altName" class="text-h6 font-weight-light white--text my-n2">
+                              <p v-if="documental.altName" class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h5 font-weight-light white--text my-n2">
                                 {{ documental.altName }}
                               </p>
-                              <p class="my-4 text-h6 white--text">
+                              <p class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h5 my-4 white--text">
                                 <v-icon color="white" v-if="documental.author">mdi-account-outline</v-icon><span v-if="documental.author" class="mr-6"> {{ documental.author }}</span>
                                 <!-- <span v-if="documental.year">, {{ documental.year }}</span> 
                                 <span v-if="documental.country">, {{ documental.country }}</span> 
                                 <span v-if="documental.time">, {{ documental.time }} minutos</span> -->
                               </p>
-                              <p class="text-subtitle-1 white--text">
+                              <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 white--text">
                                 <span v-if="documental.year"><v-icon color="white">mdi-calendar</v-icon><span class="mr-6"> {{ documental.year }}</span></span>
                                 <span v-if="documental.time"><v-icon color="white">mdi-clock-outline</v-icon><span class="mr-6"> {{ documental.time }} min.</span></span>
                                 <span v-if="documental.country"><v-icon color="white">mdi-earth</v-icon><span class="mr-6"> {{ documental.country }}</span></span>
                                 <span v-if="documental.language"><v-icon color="white">mdi-volume-high</v-icon><span class="mr-6"> {{ documental.language }}</span></span>
                                 <span v-if="documental.subtitle"><v-icon color="white">mdi-closed-caption-outline</v-icon><span> {{ documental.subtitle }}</span></span>
                               </p>
-                              <p v-if="documental.plot" class="my-6 text-body-1 white--text">
+                              <p v-if="documental.plot" class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 my-6 white--text">
                                 {{ documental.plot }}
                               </p>
 
@@ -123,7 +122,7 @@
                             </v-col>
 
                             <!-- Imagen/animación del documental -->
-                            <v-col sm="12" md="5" align="center" justify="center">
+                            <v-col xs="12" sm="12" md="5" align="center" justify="center">
                               <a :href="documental.link" target="_blank">
                                 <v-img max-height="350" contain :src="require('@/assets/' + documental.image)"></v-img>
                               </a>
@@ -141,7 +140,7 @@
           <!-- Listado de documentales en formato de v-cards -->
           <v-container xs12>
             <v-row align="center" justify="left">
-              <v-col cols="6" md="3" xl="3" v-for="(documental, i) in documentalesLengua" :key="i">
+              <v-col cols="12" xs="12" sm="6" md="3" xl="3" v-for="(documental, i) in documentalesLengua" :key="i">
                 <v-hover v-slot="{ hover }">
                   <v-card outlined shaped color="rgba(0,0,0,0.8)" @click="carousel.lengua = i" :class="{ 'on-hover': hover, 'my-selection': i == carousel.lengua, 'my-v-card': true }">
                     <v-card-text class="justify-center text-center text-h6 font-weight-bold white--text">
@@ -156,16 +155,17 @@
       </section>
     </v-expand-transition>
 
-    <v-parallax src="@/assets/Background4.jpg" height="700" id="parallax3">
+    <!-- Sala de proyecciones #2 -->
+    <v-parallax src="@/assets/Background4.jpg" :height="parallaxHeight" id="parallax3">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h2 class="display-3 font-weight-medium">
+          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 font-weight-medium">
             Matriarquía
           </h2>
-          <h3 class="display-2 font-weight-thin mt-4">
+          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
             14 al 28 de marzo de 2022
           </h3>
-          <p class="body-1 mt-10" style="font-size: 1.15rem !important">
+          <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
             De Isla Tortuga al Abya Yala, las mujeres nos encontramos en un proceso de transformación plural y crítico, de denuncia, organización y reivindicación, como respuesta y rechazo a una posición de subordinación y desigualdad que hemos padecido históricamente. Reconocer la complejidad de la maternidad y la necesidad de rechazarla como institución ha sido parte de la transición en que nos encontramos. Así mismo, entender la maternidad como la capacidad generadora del cuerpo de las mujeres, concibiéndolo como fuente de placer, vínculos, saberes y poder privativamente femeninos ha sido fundamental. La noción de matriarquía permite poner de relieve la experiencia y sabiduría de las mujeres, pero también la autoridad y reconocimiento que tienen en sus comunidades. Los documentales aquí agrupados reflejan diversas configuraciones -individuales y colectivas- de este proceso transformador.
           </p>
           <p>
@@ -174,20 +174,20 @@
 
           <v-expand-transition>
             <div v-show="show.matriarquia">
-              <h2 class="display-1 font-weight-light mt-8">
+              <h2 class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h3 font-weight-regular mt-8">
                 Conversatorio en línea
               </h2>
-              <h3 class="headline font-weight-light">
+              <h3 class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h5 text-xl-h4 font-weight-light mb-2">
                 23 de marzo, 16 hrs. (Ciudad de México)
               </h3>
-              <p>
+              <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
                 <strong>Sandra Luz López Barroso</strong> (moderadora, realizadora y antropóloga)<br/> 
                 <strong>Ana Bolena Rodríguez</strong> (protagonista de <em>Cartas para Ana</em>, Colombia)<br/>
                 <strong>Mauri Balanta</strong> (productora de <em>Cartas para Ana</em>, Colombia)<br/>
                 <strong>Selene Yuridia Galindo</strong> (Tohono O'odham, antropóloga y realizadora, México)<br/>
                 <strong>Iris Belén Villalpando</strong> (Yoreme, documentalista, México)
               </p>
-              <p>
+              <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
                 <v-btn class="ma-2" color="red" dark href="https://www.youtube.com/c/REDOCInvestigaci%C3%B3n" target="_blank">
                   <v-icon large dark right class="ml-2 mr-4">mdi-youtube</v-icon>
                   ReDOC Investigación
@@ -209,7 +209,7 @@
       <section id="sala2" v-show="show.matriarquia" class="cyan lighten-1 my-n12 py-4" style="background: linear-gradient(180deg, rgba(106,27,154,1) 0%, rgba(136,14,79,1) 100%);">
         <v-layout column wrap class="my-12 py-12" align-center>
           <v-flex xs12 class="text-center">
-            <h2 class="display-3 mt-4 mb-4 white--text">
+            <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 mt-4 mb-4 white--text">
               Sala de proyecciones
             </h2>
           </v-flex>
@@ -227,28 +227,28 @@
                           <v-row align="center">
                             <v-col sm="12" md="5" offset-md="1">
                               <!-- Información del documental -->
-                              <p class="text-h4 font-weight-medium white--text">
+                              <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h3 font-weight-medium white--text">
                                 <a class="white--text text-decoration-underline" :href="documental.link" target="_blank">
                                   {{ documental.name }}
                                 </a>
                               </p>
-                              <p v-if="documental.altName" class="text-h6 font-weight-light white--text my-n2">
+                              <p v-if="documental.altName" class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h5 font-weight-light white--text my-n2">
                                 {{ documental.altName }}
                               </p>
-                              <p class="my-4 text-h6 white--text">
+                              <p class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h5 my-4 white--text">
                                 <v-icon color="white" v-if="documental.author">mdi-account-outline</v-icon><span v-if="documental.author" class="mr-6"> {{ documental.author }}</span>
                                 <!-- <span v-if="documental.year">, {{ documental.year }}</span> 
                                 <span v-if="documental.country">, {{ documental.country }}</span> 
                                 <span v-if="documental.time">, {{ documental.time }} minutos</span> -->
                               </p>
-                              <p class="text-subtitle-1 white--text">
+                              <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 white--text">
                                 <span v-if="documental.year"><v-icon color="white">mdi-calendar</v-icon><span class="mr-6"> {{ documental.year }}</span></span>
                                 <span v-if="documental.time"><v-icon color="white">mdi-clock-outline</v-icon><span class="mr-6"> {{ documental.time }} min.</span></span>
                                 <span v-if="documental.country"><v-icon color="white">mdi-earth</v-icon><span class="mr-6"> {{ documental.country }}</span></span>
                                 <span v-if="documental.language"><v-icon color="white">mdi-volume-high</v-icon><span class="mr-6"> {{ documental.language }}</span></span>
                                 <span v-if="documental.subtitle"><v-icon color="white">mdi-closed-caption-outline</v-icon><span> {{ documental.subtitle }}</span></span>
                               </p>
-                              <p v-if="documental.plot" class="my-6 text-body-1 white--text">
+                              <p v-if="documental.plot" class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 my-6 white--text">
                                 {{ documental.plot }}
                               </p>
 
@@ -279,7 +279,7 @@
           <!-- Listado de documentales en formato de v-cards -->
           <v-container xs12>
             <v-row align="center" justify="left">
-              <v-col cols="6" md="3" xl="3" v-for="(documental, i) in documentalesMatriarquia" :key="i">
+              <v-col cols="12" xs="12" sm="6" md="3" xl="3" v-for="(documental, i) in documentalesMatriarquia" :key="i">
                 <v-hover v-slot="{ hover }">
                   <v-card outlined shaped color="rgba(0,0,0,0.8)" @click="carousel.matriarquia = i" :class="{ 'on-hover': hover, 'my-selection': i == carousel.matriarquia, 'my-v-card': true }">
                     <v-card-text class="justify-center text-center text-h6 font-weight-bold white--text">
@@ -296,16 +296,16 @@
 
 
     <!-- Sala de proyecciones #3 -->
-    <v-parallax src="@/assets/Background1.jpg" height="600" id="parallax4">
+    <v-parallax src="@/assets/Background1.jpg" :height="parallaxHeight" id="parallax4">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h2 class="display-3 font-weight-medium">
+          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1">
             Territorio
           </h2>
-          <h3 class="display-2 font-weight-thin mt-4">
+          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
             11 al 25 de abril de 2022
           </h3>
-          <p class="body-1 mt-10" style="font-size: 1.15rem !important">
+          <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
             En Isla Tortuga y Abya Yala los territorios han sido objeto de disputa desde la llegada de los colonizadores europeos, para quienes los territorios han sido predominantemente proveedores de recursos y de riqueza económica y material. En cambio, las y los habitantes de Isla Tortuga y Abya Yala, han establecido relaciones sociales, culturales y espirituales, además de económicas, con las tierras, lagos y ríos, e igualmente con sus piedras, los minerales del subsuelo, el aire y todos los animales que ahí convergen: en armonía con la Madre Tierra. Desafortunadamente, hoy día la explotación irracional de recursos ha generado contaminación y problemas medioambientales. Tomando en cuenta la diversidad de cosmovisiones de los pueblos de Isla Tortuga y Abya Yala, en general, el derecho al territorio es fundamental, porque sin él, no hay espacio en donde ellas y ellos se asienten a ejercer derechos fundamentales como el derecho a la vida y a la expresión de su cultura. 
           </p>
         </v-col>
@@ -584,6 +584,28 @@ export default {
     ],
     tab: null,
   }),
+  computed: {
+    initHeight: function(){
+      switch (this.$vuetify.breakpoint.name){
+        case 'xs': return 1100
+        case 'sm': return 600
+        case 'md': return 700
+        case 'lg': return 700
+        case 'xl': return 600
+      }
+      return 700
+    },
+    parallaxHeight: function(){
+      switch (this.$vuetify.breakpoint.name){
+        case 'xs': return 1100
+        case 'sm': return 700
+        case 'md': return 700
+        case 'lg': return 700
+        case 'xl': return 600
+      }
+      return 700
+    }
+  }
 }
 </script>
 
