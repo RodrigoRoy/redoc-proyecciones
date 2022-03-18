@@ -12,17 +12,34 @@
       <v-spacer></v-spacer>
 
       <v-btn text @click="$vuetify.goTo('#parallax1', options)">
-        <span class="mr-2">Inicio</span>
+        <span class="mr-2">{{ $t('header.inicio') }}</span>
       </v-btn>
       <v-btn text @click="$vuetify.goTo('#parallax2', options)">
-        <span class="mr-2">Lenguas maternas</span>
+        <span class="mr-2">{{ $t('header.lenguasMaternas') }}</span>
       </v-btn>
       <v-btn text @click="$vuetify.goTo('#parallax3', options)">
-        <span class="mr-2">Matriarquía</span>
+        <span class="mr-2">{{ $t('header.matriarquia') }}</span>
       </v-btn>
       <v-btn text @click="$vuetify.goTo('#parallax4', options)">
-        <span class="mr-2">Territorio</span>
+        <span class="mr-2">{{ $t('header.territorio') }}</span>
       </v-btn>
+
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            dark
+            v-bind="attrs"
+            v-on="on"
+          >
+            {{ $t('header.idioma') }}
+          </v-btn>
+        </template>
+        <v-list class="pointerCursor">
+          <v-list-item v-for="(item, index) in items" :key="index">
+            <v-list-item-title @click="switchLocale(item.lang)">{{ item.language }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
       <!-- <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text >
         <span class="mr-2">Latest Release</span>
@@ -61,6 +78,34 @@ export default {
       offset: 0,
       easing: 'easeInOutCubic',
     },
+    // Idiomas del sistema
+    items: [
+      {
+        language: 'Español',
+        lang: 'es'
+      },
+      {
+        language: 'English',
+        lang: 'en'
+      }
+    ],
   }),
+  methods: {
+    // Cambia el idioma del sistema
+    switchLocale(locale) {
+      if (this.$i18n.locale !== locale) {
+        this.$i18n.locale = locale;
+      }
+    }
+  }
 };
 </script>
+
+<style scoped>
+.pointerCursor{
+  cursor: pointer;
+}
+.pointerCursor :hover{
+  background-color: #E4E0E0;
+}
+</style>
