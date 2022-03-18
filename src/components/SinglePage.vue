@@ -4,10 +4,10 @@
     <v-parallax src="@/assets/Background1.jpg" :height="initHeight" class="mt-n12" id="parallax1">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 font-weight-medium">
+          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h2 font-weight-medium">
             Diálogos documentales de Isla Tortuga al Abya Yala
           </h2>
-          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
+          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h3 font-weight-thin mt-4">
             <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax2', options)">Lengua</a>, <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax3', options)">matriarquía</a> y <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax4', options)">territorio</a>
           </h3>
           <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-12">
@@ -21,10 +21,10 @@
     <v-parallax src="@/assets/Background2.jpg" :height="parallaxHeight" id="parallax2">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 font-weight-medium">
+          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h2 font-weight-medium">
             Lenguas maternas
           </h2>
-          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
+          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h3 font-weight-thin mt-4">
             14 al 28 de febrero de 2022
           </h3>
           <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
@@ -36,10 +36,10 @@
 
           <v-expand-transition>
             <div v-show="show.lengua">
-              <h2 class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h3 font-weight-regular mt-8"> 
+              <h2 class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-regular mt-8"> 
                 Conversatorio en línea
               </h2>
-              <h3 class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h5 text-xl-h4 font-weight-light mb-2">
+              <h3 class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h5 text-xl-h5 font-weight-light mb-2">
                 23 de febrero, 16 hrs. (Ciudad de México)
               </h3>
               <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
@@ -70,7 +70,7 @@
       <section id="sala1" v-show="show.lengua" class="cyan lighten-1 my-n12 py-4" style="background: linear-gradient(180deg, rgba(0,77,64,1) 0%, rgba(13,71,161,1) 100%);">
         <v-layout column wrap class="my-12 py-12" align-center>
           <v-flex xs12 class="text-center">
-            <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 mt-4 mb-4 white--text">
+            <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h2 mt-4 mb-4 white--text">
               Sala de proyecciones
             </h2>
           </v-flex>
@@ -88,15 +88,15 @@
                           <v-row align="center">
                             <v-col xs="12" sm="12" md="5" offset-md="1">
                               <!-- Información del documental -->
-                              <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h3 font-weight-medium white--text">
+                              <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-medium white--text">
                                 <a class="white--text text-decoration-underline" :href="documental.link" target="_blank">
                                   {{ documental.name }}
                                 </a>
                               </p>
-                              <p v-if="documental.altName" class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h5 font-weight-light white--text my-n2">
+                              <p v-if="documental.altName" class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h6 font-weight-light white--text my-n2">
                                 {{ documental.altName }}
                               </p>
-                              <p class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h5 my-4 white--text">
+                              <p class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h6 my-4 white--text">
                                 <v-icon color="white" v-if="documental.author">mdi-account-outline</v-icon><span v-if="documental.author" class="mr-6"> {{ documental.author }}</span>
                                 <!-- <span v-if="documental.year">, {{ documental.year }}</span> 
                                 <span v-if="documental.country">, {{ documental.country }}</span> 
@@ -159,10 +159,10 @@
     <v-parallax src="@/assets/Background4.jpg" :height="parallaxHeight" id="parallax3">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 font-weight-medium">
+          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h2 font-weight-medium">
             Matriarquía
           </h2>
-          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
+          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h3 font-weight-thin mt-4">
             14 al 28 de marzo de 2022
           </h3>
           <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
@@ -174,10 +174,10 @@
 
           <v-expand-transition>
             <div v-show="show.matriarquia">
-              <h2 class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h3 font-weight-regular mt-8">
+              <h2 class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-regular mt-8">
                 Conversatorio en línea
               </h2>
-              <h3 class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h5 text-xl-h4 font-weight-light mb-2">
+              <h3 class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h5 text-xl-h5 font-weight-light mb-2">
                 23 de marzo, 16 hrs. (Ciudad de México)
               </h3>
               <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
@@ -209,7 +209,7 @@
       <section id="sala2" v-show="show.matriarquia" class="cyan lighten-1 my-n12 py-4" style="background: linear-gradient(180deg, rgba(106,27,154,1) 0%, rgba(136,14,79,1) 100%);">
         <v-layout column wrap class="my-12 py-12" align-center>
           <v-flex xs12 class="text-center">
-            <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 mt-4 mb-4 white--text">
+            <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h2 mt-4 mb-4 white--text">
               Sala de proyecciones
             </h2>
           </v-flex>
@@ -227,15 +227,15 @@
                           <v-row align="center">
                             <v-col sm="12" md="5" offset-md="1">
                               <!-- Información del documental -->
-                              <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h3 font-weight-medium white--text">
+                              <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-medium white--text">
                                 <a class="white--text text-decoration-underline" :href="documental.link" target="_blank">
                                   {{ documental.name }}
                                 </a>
                               </p>
-                              <p v-if="documental.altName" class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h5 font-weight-light white--text my-n2">
+                              <p v-if="documental.altName" class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h6 font-weight-light white--text my-n2">
                                 {{ documental.altName }}
                               </p>
-                              <p class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h5 my-4 white--text">
+                              <p class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h6 my-4 white--text">
                                 <v-icon color="white" v-if="documental.author">mdi-account-outline</v-icon><span v-if="documental.author" class="mr-6"> {{ documental.author }}</span>
                                 <!-- <span v-if="documental.year">, {{ documental.year }}</span> 
                                 <span v-if="documental.country">, {{ documental.country }}</span> 
@@ -299,10 +299,10 @@
     <v-parallax src="@/assets/Background1.jpg" :height="parallaxHeight" id="parallax4">
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
-          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1">
+          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h2">
             Territorio
           </h2>
-          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
+          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h3 font-weight-thin mt-4">
             11 al 25 de abril de 2022
           </h3>
           <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
@@ -601,7 +601,7 @@ export default {
         case 'sm': return 700
         case 'md': return 700
         case 'lg': return 700
-        case 'xl': return 600
+        case 'xl': return 700
       }
       return 700
     }
