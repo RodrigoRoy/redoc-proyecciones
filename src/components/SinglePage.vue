@@ -82,7 +82,7 @@
                 <v-carousel-item v-for="(documental, i) in documentalesLengua" :key="i">
                   <!-- Cada elemento del carrusel serán dos columnas con información e imagen -->
                   <v-sheet color="rgba(0,0,0,0.7)" height="100%" tile>
-                    <v-row class="fill-height" align="center" justify="center">
+                    <!-- <v-row class="fill-height" align="center" justify="center"> -->
                       <div>
                         <v-container>
                           <v-row align="center">
@@ -130,7 +130,7 @@
                           </v-row>
                         </v-container>
                       </div>
-                    </v-row>
+                    <!-- </v-row> -->
                   </v-sheet>
                 </v-carousel-item>
               </v-carousel>
@@ -215,16 +215,16 @@
           </v-flex>
 
           <!-- Carrusel con información del documental -->
-          <v-flex xs12 class="text-center">
+          <v-flex class="text-center" :height="carruselHeight">
             <v-hover v-slot="{ hover }">
-              <v-carousel v-model="carousel.matriarquia" fluid delimiter-icon="mdi-movie" show-arrows-on-hover :cycle="!hover" hide-delimiters :show-arrows="false" interval="10000" class="py-0">
-                <v-carousel-item v-for="(documental, i) in documentalesMatriarquia" :key="i">
+              <v-carousel v-model="carousel.matriarquia" fluid delimiter-icon="mdi-movie" show-arrows-on-hover :cycle="!hover" hide-delimiters :show-arrows="false" interval="10000" :height="carruselHeight" class="py-0">
+                <v-carousel-item :height="carruselHeight" v-for="(documental, i) in documentalesMatriarquia" :key="i">
                   <!-- Cada elemento del carrusel serán dos columnas con información e imagen -->
-                  <v-sheet color="rgba(0,0,0,0.7)" height="100%" tile>
-                    <v-row class="fill-height" align="center" justify="center">
+                  <v-sheet color="rgba(0,0,0,0.7)" tile>
+                    <!-- <v-row class="fill-height" align="center" justify="center"> -->
                       <div>
-                        <v-container>
-                          <v-row align="center">
+                        <v-container class="text-center carruselHeight">
+                          <v-row align="center" >
                             <v-col sm="12" md="5" offset-md="1">
                               <!-- Información del documental -->
                               <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-medium white--text">
@@ -252,7 +252,7 @@
                                 {{ documental.plot }}
                               </p>
 
-                              <v-divider class="mx-4 mb-4"></v-divider>
+                              <!-- <v-divider class="mx-4 mb-4"></v-divider> -->
 
                               <!-- Información adicional (tags) -->
                               <!-- <v-chip v-for="(tag, i) in documental.tags" :key="i" color="secondary" class="mx-2">
@@ -269,7 +269,7 @@
                           </v-row>
                         </v-container>
                       </div>
-                    </v-row>
+                    <!-- </v-row> -->
                   </v-sheet>
                 </v-carousel-item>
               </v-carousel>
@@ -604,6 +604,16 @@ export default {
         case 'xl': return 700
       }
       return 700
+    },
+    carruselHeight: function(){
+      switch (this.$vuetify.breakpoint.name){
+        case 'xs': return 660
+        case 'sm': return 650
+        case 'md': return 500
+        case 'lg': return 500
+        case 'xl': return 600
+      }
+      return 700
     }
   }
 }
@@ -627,7 +637,9 @@ export default {
 .my-section{
   font-size: 1.2rem !important;
 }
-
+.carruselHeight{
+  height: 1000px;
+}
 
 /* INICIO: lime darken-4 -> blue-grey darken-3 */
 div#parallax1.v-parallax > .v-parallax__content{
