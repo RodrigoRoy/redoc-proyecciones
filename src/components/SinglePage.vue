@@ -221,7 +221,7 @@
                 <v-carousel-item v-for="(documental, i) in documentalesMatriarquia" :key="i">
                   <!-- Cada elemento del carrusel serán dos columnas con información e imagen -->
                   <v-sheet color="rgba(0,0,0,0.7)" height="100%" tile>
-                    <v-row class="fill-height" align="center" justify="center">
+                    <!-- <v-row class="fill-height" align="center" justify="center"> -->
                       <div>
                         <v-container>
                           <v-row align="center">
@@ -269,7 +269,7 @@
                           </v-row>
                         </v-container>
                       </div>
-                    </v-row>
+                    <!-- </v-row> -->
                   </v-sheet>
                 </v-carousel-item>
               </v-carousel>
