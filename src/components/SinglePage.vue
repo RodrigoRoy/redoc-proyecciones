@@ -188,11 +188,11 @@
                 <strong>Iris Belén Villalpando</strong> (Yoreme, documentalista, México)
               </p>
               <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
-                <v-btn class="ma-2" color="red" dark href="https://www.youtube.com/c/REDOCInvestigaci%C3%B3n" target="_blank">
+                <v-btn class="ma-2" color="red" dark href="https://youtu.be/TqsGMkyGonk" target="_blank">
                   <v-icon large dark right class="ml-2 mr-4">mdi-youtube</v-icon>
                   ReDOC Investigación
                 </v-btn>
-                <v-btn class="ma-2" color="indigo" dark href="https://www.facebook.com/Institutomora" target="_blank">
+                <v-btn class="ma-2" color="indigo" dark href="https://www.facebook.com/Institutomora/videos/1005607473725791" target="_blank">
                   <v-icon large dark right class="ml-2 mr-4">mdi-facebook</v-icon>
                   Instituto Mora
                 </v-btn>
@@ -333,7 +333,7 @@ export default {
     }, // indice del elemento en carrusel que se muestra,
     show: { // muestra/oculta información adicional sobre un bloque o área
       lengua: false,
-      matriarquia: true,
+      matriarquia: false,
       // territorio: false
     },
     documentalesLengua: [ // documentales para sala de proyecciones (Lengua)
