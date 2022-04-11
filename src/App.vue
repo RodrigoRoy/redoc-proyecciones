@@ -24,7 +24,7 @@
         <span class="mr-2">{{ $t('header.territorio') }}</span>
       </v-btn>
 
-      <v-menu offset-y>
+      <!-- <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
           <v-btn
             dark
@@ -39,7 +39,7 @@
             <v-list-item-title @click="switchLocale(item.lang)">{{ item.language }}</v-list-item-title>
           </v-list-item>
         </v-list>
-      </v-menu>
+      </v-menu> -->
 
       <!-- <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text >
         <span class="mr-2">Latest Release</span>
