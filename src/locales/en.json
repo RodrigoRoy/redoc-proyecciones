@@ -6,6 +6,25 @@
       "territorio": "Territory",
       "idioma": "Languages"
     },
+    "acercaProyecciones": {
+      "dialogosDocumentales": "Documentary dialogues from Turtle Island to Abya Yala",
+      "lengua": "Language",
+      "matriarquía": "matriarchy",
+      "y": "and",
+      "territorio": "territory"
+    },
+    "salaProyecciones1": {
+      "titulo": "Mother Tongues",
+      "fecha": "February 14 to 28, 2022"
+    },
+    "salaProyecciones2": {
+      "titulo": "Matriarchy",
+      "fecha": "March 14 to 28, 2022"
+    },
+    "salaProyecciones3": {
+      "titulo": "Territory",
+      "fecha": "April 11 to 25, 2022"
+    },
     "footer": {
         "encabezado": "Film Curation and Organization"
     }

@@ -6,6 +6,25 @@
     "territorio": "Territorio",
     "idioma": "Idiomas"
   },
+  "acercaProyecciones": {
+    "dialogosDocumentales": "Diálogos documentales de Isla Tortuga al Abya Yala",
+    "lengua": "Lengua",
+    "matriarquía": "matriarquía",
+    "y": "y",
+    "territorio": "territorio"
+  },
+  "salaProyecciones1": {
+    "titulo": "Lenguas maternas",
+    "fecha": "14 al 28 de febrero de 2022"
+  },
+  "salaProyecciones2": {
+    "titulo": "Matriarquía",
+    "fecha": "14 al 28 de marzo de 2022"
+  },
+  "salaProyecciones3": {
+    "titulo": "Territorio",
+    "fecha": "11 al 25 de abril de 2022"
+  },
   "footer": {
       "encabezado": "Curaduría fílmica y organización"
   }

@@ -5,10 +5,17 @@
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
           <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 font-weight-medium">
-            Diálogos documentales de Isla Tortuga al Abya Yala
+            {{ $t('acercaProyecciones.dialogosDocumentales') }}
           </h2>
           <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
-            <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax2', options)">Lengua</a>, <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax3', options)">matriarquía</a> y <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax4', options)">territorio</a>
+            <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax2', options)">
+              {{ $t('acercaProyecciones.lengua') }}
+            </a>, 
+            <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax3', options)">
+              {{ $t('acercaProyecciones.matriarquía') }}</a> {{ $t('acercaProyecciones.y') }} 
+            <a class="white--text text-decoration-underline" @click="$vuetify.goTo('#parallax4', options)">
+              {{ $t('acercaProyecciones.territorio') }}
+            </a>
           </h3>
           <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-12">
             La lucha y resistencia de los pueblos originarios que habitan Isla Tortuga y el Abya Yala, así como los pueblos afrodescendientes en las Américas, se ha dirigido a problemáticas comunes en función de sus particularidades geopolíticas en permanente cambio. Entre ellas, la conservación del territorio, la revitalización de la lengua y la participación de las mujeres en las estrategias de cohesión y empoderamiento. En las últimas décadas, una estrategia recurrente de estos pueblos ha sido el empleo del video y el cine documental como herramientas no violentas de resistencia política y soberanía representacional que buscan visibilizar las problemáticas que enfrentan. Es así que desde la perspectiva de la investigación sobre el documental, como campo de estudio expandido, nos parece relevante suscitar espacios de reflexión y sensibilización en torno al irreductible papel que adquiere el empleo de estas herramientas en la organización e interacción política de estas comunidades, así como su lucha por la soberanía.
@@ -22,10 +29,10 @@
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
           <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 font-weight-medium">
-            Lenguas maternas
+            {{ $t('salaProyecciones1.titulo') }}
           </h2>
           <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
-            14 al 28 de febrero de 2022
+            {{ $t('salaProyecciones1.fecha') }}
           </h3>
           <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
             La lengua materna es aquella que se enseña desde el nacimiento, con la que se conoce el mundo, se interactúa y se desarrolla el pensamiento. Las lenguas son signo de identidad y pertenencia, se crean y transmiten en comunidad. Tienen dimensiones cognitivas individuales y sociales, de trascendencia psicológica y política. A través de ellas se expresa y transmite cultura, saberes, ideología, religión, tradiciones, costumbres, valores, creencias, etc. Como señala Nidia López García (poeta Tuún Savi) “Una lengua no sólo te permite comunicarte sino ser poseedora de una herencia; es otra forma de hacer mundo.” Se estima que en el mundo existen alrededor de 7079 lenguas, de las que el 43% se encuentra en peligro de desaparición. La totalidad de éste porcentaje corresponde a lenguas nativas, es decir, aquellas que son habladas por pueblos originarios de un territorio. Este ciclo celebra la diversidad de las lenguas y su soberanía.
@@ -160,10 +167,10 @@
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
           <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1 font-weight-medium">
-            Matriarquía
+            {{ $t('salaProyecciones2.titulo') }}
           </h2>
           <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
-            14 al 28 de marzo de 2022
+            {{ $t('salaProyecciones2.fecha') }}
           </h3>
           <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
             De Isla Tortuga al Abya Yala, las mujeres nos encontramos en un proceso de transformación plural y crítico, de denuncia, organización y reivindicación, como respuesta y rechazo a una posición de subordinación y desigualdad que hemos padecido históricamente. Reconocer la complejidad de la maternidad y la necesidad de rechazarla como institución ha sido parte de la transición en que nos encontramos. Así mismo, entender la maternidad como la capacidad generadora del cuerpo de las mujeres, concibiéndolo como fuente de placer, vínculos, saberes y poder privativamente femeninos ha sido fundamental. La noción de matriarquía permite poner de relieve la experiencia y sabiduría de las mujeres, pero también la autoridad y reconocimiento que tienen en sus comunidades. Los documentales aquí agrupados reflejan diversas configuraciones -individuales y colectivas- de este proceso transformador.
@@ -300,10 +307,10 @@
       <v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
           <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1">
-            Territorio
+            {{ $t('salaProyecciones3.titulo') }}
           </h2>
           <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
-            11 al 25 de abril de 2022
+            {{ $t('salaProyecciones3.fecha') }}
           </h3>
           <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
             En Isla Tortuga y Abya Yala los territorios han sido objeto de disputa desde la llegada de los colonizadores europeos, para quienes los territorios han sido predominantemente proveedores de recursos y de riqueza económica y material. En cambio, las y los habitantes de Isla Tortuga y Abya Yala, han establecido relaciones sociales, culturales y espirituales, además de económicas, con las tierras, lagos y ríos, e igualmente con sus piedras, los minerales del subsuelo, el aire y todos los animales que ahí convergen: en armonía con la Madre Tierra. Desafortunadamente, hoy día la explotación irracional de recursos ha generado contaminación y problemas medioambientales. Tomando en cuenta la diversidad de cosmovisiones de los pueblos de Isla Tortuga y Abya Yala, en general, el derecho al territorio es fundamental, porque sin él, no hay espacio en donde ellas y ellos se asienten a ejercer derechos fundamentales como el derecho a la vida y a la expresión de su cultura. 
