@@ -96,9 +96,9 @@
                             <v-col xs="12" sm="12" md="5" offset-md="1">
                               <!-- Información del documental -->
                               <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-medium white--text">
-                                <a class="white--text text-decoration-underline" :href="documental.link" target="_blank">
+                                <!-- <a v-if="documental.link" class="white--text text-decoration-underline" :href="documental.link" target="_blank"> -->
                                   {{ documental.name }}
-                                </a>
+                                <!-- </a> -->
                               </p>
                               <p v-if="documental.altName" class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h6 font-weight-light white--text my-n2">
                                 {{ documental.altName }}
@@ -130,9 +130,9 @@
 
                             <!-- Imagen/animación del documental -->
                             <v-col xs="12" sm="12" md="5" align="center" justify="center">
-                              <a :href="documental.link" target="_blank">
+                              <!-- <a :href="documental.link" target="_blank"> -->
                                 <v-img max-height="350" contain :src="require('@/assets/' + documental.image)"></v-img>
-                              </a>
+                              <!-- </a> -->
                             </v-col>
                           </v-row>
                         </v-container>
@@ -235,6 +235,148 @@
                             <v-col sm="12" md="5" offset-md="1">
                               <!-- Información del documental -->
                               <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-medium white--text">
+                                <!-- <a class="white--text text-decoration-underline" :href="documental.link" target="_blank"> -->
+                                  {{ documental.name }}
+                                <!-- </a> -->
+                              </p>
+                              <p v-if="documental.altName" class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h6 font-weight-light white--text my-n2">
+                                {{ documental.altName }}
+                              </p>
+                              <p class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h6 my-4 white--text">
+                                <v-icon color="white" v-if="documental.author">mdi-account-outline</v-icon><span v-if="documental.author" class="mr-6"> {{ documental.author }}</span>
+                                <!-- <span v-if="documental.year">, {{ documental.year }}</span> 
+                                <span v-if="documental.country">, {{ documental.country }}</span> 
+                                <span v-if="documental.time">, {{ documental.time }} minutos</span> -->
+                              </p>
+                              <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 white--text">
+                                <span v-if="documental.year"><v-icon color="white">mdi-calendar</v-icon><span class="mr-6"> {{ documental.year }}</span></span>
+                                <span v-if="documental.time"><v-icon color="white">mdi-clock-outline</v-icon><span class="mr-6"> {{ documental.time }} min.</span></span>
+                                <span v-if="documental.country"><v-icon color="white">mdi-earth</v-icon><span class="mr-6"> {{ documental.country }}</span></span>
+                                <span v-if="documental.language"><v-icon color="white">mdi-volume-high</v-icon><span class="mr-6"> {{ documental.language }}</span></span>
+                                <span v-if="documental.subtitle"><v-icon color="white">mdi-closed-caption-outline</v-icon><span> {{ documental.subtitle }}</span></span>
+                              </p>
+                              <p v-if="documental.plot" class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 my-6 white--text">
+                                {{ documental.plot }}
+                              </p>
+
+                              <!-- <v-divider class="mx-4 mb-4"></v-divider> -->
+
+                              <!-- Información adicional (tags) -->
+                              <!-- <v-chip v-for="(tag, i) in documental.tags" :key="i" color="secondary" class="mx-2">
+                                {{ tag }}
+                              </v-chip> -->
+                            </v-col>
+
+                            <!-- Imagen/animación del documental -->
+                            <v-col sm="12" md="5" align="center" justify="center">
+                              <!-- <a :href="documental.link" target="_blank"> -->
+                                <v-img max-height="350" contain :src="require('@/assets/' + documental.image)"></v-img>
+                              <!-- </a> -->
+                            </v-col>
+                          </v-row>
+                        </v-container>
+                      </div>
+                    <!-- </v-row> -->
+                  </v-sheet>
+                </v-carousel-item>
+              </v-carousel>
+            </v-hover>
+          </v-flex>
+
+          <!-- Listado de documentales en formato de v-cards -->
+          <v-container xs12>
+            <v-row align="center" justify="left">
+              <v-col cols="12" xs="12" sm="6" md="3" xl="3" v-for="(documental, i) in documentalesMatriarquia" :key="i">
+                <v-hover v-slot="{ hover }">
+                  <v-card outlined shaped color="rgba(0,0,0,0.8)" @click="carousel.matriarquia = i" :class="{ 'on-hover': hover, 'my-selection': i == carousel.matriarquia, 'my-v-card': true }">
+                    <v-card-text class="justify-center text-center text-h6 font-weight-bold white--text">
+                      {{ documental.name }}
+                    </v-card-text>
+                  </v-card>
+                </v-hover>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-layout>
+      </section>
+    </v-expand-transition>
+
+
+    <!-- Sala de proyecciones #3 -->
+    <v-parallax src="@/assets/Background5.jpg" :height="parallaxHeight" id="parallax4">
+      <v-row align="center" justify="center">
+        <v-col class="text-center" cols="12">
+          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1">
+            {{ $t('salaProyecciones3.titulo') }}
+          </h2>
+          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
+            {{ $t('salaProyecciones3.fecha') }}
+          </h3>
+          <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
+            En Isla Tortuga y Abya Yala los territorios han sido objeto de disputa desde la llegada de los colonizadores europeos, para quienes los territorios han sido predominantemente proveedores de recursos y de riqueza económica y material. En cambio, las y los habitantes de Isla Tortuga y Abya Yala, han establecido relaciones sociales, culturales y espirituales, además de económicas, con las tierras, lagos y ríos, e igualmente con sus piedras, los minerales del subsuelo, el aire y todos los animales que ahí convergen: en armonía con la Madre Tierra. Desafortunadamente, hoy día la explotación irracional de recursos ha generado contaminación y problemas medioambientales. Tomando en cuenta la diversidad de cosmovisiones de los pueblos de Isla Tortuga y Abya Yala, en general, el derecho al territorio es fundamental, porque sin él, no hay espacio en donde ellas y ellos se asienten a ejercer derechos fundamentales como el derecho a la vida y a la expresión de su cultura. 
+          </p>
+
+          <p>
+            <v-btn plain color="white" @click="show.territorio = !show.territorio" v-show="!show.territorio">Más información</v-btn>
+          </p>
+
+          <v-expand-transition>
+            <div v-show="show.territorio">
+              <h2 class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-regular mt-8">
+                Conversatorio en línea
+              </h2>
+              <h3 class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h5 text-xl-h5 font-weight-light mb-2">
+                20 de abril, 16 hrs. (Ciudad de México)
+              </h3>
+              <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
+                <strong>Lionel Rossi</strong> (moderador)<br/> 
+                <strong>Ana Mauad</strong> (traductora)<br/>
+                <strong>Damba Matis</strong> (realizador de <em>Matses Muxan Akadakit</em>)<br/>
+                <strong>Olinda Yawar Muniz Wanderley</strong> (realizadora de <em>Equilibrio</em>)<br/>
+                <strong>José Luis Matias</strong> (realizador de <em>El mineral o la vida</em>)<br/>
+                <strong>Zenaida Pérez Gutiérrez</strong> (coordinadora del Programa de Mujeres Indígenas del Instituto de Liderazgo Simone de Beauvoir A.C.)
+              </p>
+              <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
+                <v-btn class="ma-2" color="red" dark href="https://www.youtube.com/c/REDOCInvestigaci%C3%B3n" target="_blank">
+                  <v-icon large dark right class="ml-2 mr-4">mdi-youtube</v-icon>
+                  ReDOC Investigación
+                </v-btn>
+                <v-btn class="ma-2" color="indigo" dark href="https://www.facebook.com/Institutomora" target="_blank">
+                  <v-icon large dark right class="ml-2 mr-4">mdi-facebook</v-icon>
+                  Instituto Mora
+                </v-btn>
+              </p>
+            </div>
+          </v-expand-transition>
+        </v-col>
+      </v-row>
+    </v-parallax>
+
+    <!-- Sala de proyecciones #3 -->
+    <!-- <section id="sala1" style="background-color: rgba(0, 0, 0, 0.45)"> -->
+    <v-expand-transition>
+      <section id="sala2" v-show="show.territorio" class="cyan lighten-1 my-n12 py-4" style="background: linear-gradient(180deg, rgba(124,179,66,1) 0%, rgba(0,77,64,1) 100%);">
+        <v-layout column wrap class="my-12 py-12" align-center>
+          <v-flex xs12 class="text-center">
+            <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h2 mt-4 mb-4 white--text">
+              Sala de proyecciones
+            </h2>
+          </v-flex>
+
+          <!-- Carrusel con información del documental -->
+          <v-flex class="text-center" :height="carruselHeight">
+            <v-hover v-slot="{ hover }">
+              <v-carousel v-model="carousel.territorio" fluid delimiter-icon="mdi-movie" show-arrows-on-hover :cycle="!hover" hide-delimiters :show-arrows="false" interval="10000" :height="carruselHeight" class="py-0">
+                <v-carousel-item :height="carruselHeight" v-for="(documental, i) in documentalesTerritorio" :key="i">
+                  <!-- Cada elemento del carrusel serán dos columnas con información e imagen -->
+                  <v-sheet color="rgba(0,0,0,0.7)" tile>
+                    <!-- <v-row class="fill-height" align="center" justify="center"> -->
+                      <div>
+                        <v-container class="text-center carruselHeight">
+                          <v-row align="center" >
+                            <v-col sm="12" md="5" offset-md="1">
+                              <!-- Información del documental -->
+                              <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-medium white--text">
                                 <a class="white--text text-decoration-underline" :href="documental.link" target="_blank">
                                   {{ documental.name }}
                                 </a>
@@ -286,9 +428,9 @@
           <!-- Listado de documentales en formato de v-cards -->
           <v-container xs12>
             <v-row align="center" justify="left">
-              <v-col cols="12" xs="12" sm="6" md="3" xl="3" v-for="(documental, i) in documentalesMatriarquia" :key="i">
+              <v-col cols="12" xs="12" sm="6" md="3" xl="3" v-for="(documental, i) in documentalesTerritorio" :key="i">
                 <v-hover v-slot="{ hover }">
-                  <v-card outlined shaped color="rgba(0,0,0,0.8)" @click="carousel.matriarquia = i" :class="{ 'on-hover': hover, 'my-selection': i == carousel.matriarquia, 'my-v-card': true }">
+                  <v-card outlined shaped color="rgba(0,0,0,0.8)" @click="carousel.territorio = i" :class="{ 'on-hover': hover, 'my-selection': i == carousel.territorio, 'my-v-card': true }">
                     <v-card-text class="justify-center text-center text-h6 font-weight-bold white--text">
                       {{ documental.name }}
                     </v-card-text>
@@ -300,24 +442,6 @@
         </v-layout>
       </section>
     </v-expand-transition>
-
-
-    <!-- Sala de proyecciones #3 -->
-    <v-parallax src="@/assets/Background1.jpg" :height="parallaxHeight" id="parallax4">
-      <v-row align="center" justify="center">
-        <v-col class="text-center" cols="12">
-          <h2 class="text-h5 text-sm-h4 text-md-h3 text-lg-h2 text-xl-h1">
-            {{ $t('salaProyecciones3.titulo') }}
-          </h2>
-          <h3 class="text-h5 text-sm-h4 text-md-h4 text-lg-h3 text-xl-h2 font-weight-thin mt-4">
-            {{ $t('salaProyecciones3.fecha') }}
-          </h3>
-          <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1 mt-10">
-            En Isla Tortuga y Abya Yala los territorios han sido objeto de disputa desde la llegada de los colonizadores europeos, para quienes los territorios han sido predominantemente proveedores de recursos y de riqueza económica y material. En cambio, las y los habitantes de Isla Tortuga y Abya Yala, han establecido relaciones sociales, culturales y espirituales, además de económicas, con las tierras, lagos y ríos, e igualmente con sus piedras, los minerales del subsuelo, el aire y todos los animales que ahí convergen: en armonía con la Madre Tierra. Desafortunadamente, hoy día la explotación irracional de recursos ha generado contaminación y problemas medioambientales. Tomando en cuenta la diversidad de cosmovisiones de los pueblos de Isla Tortuga y Abya Yala, en general, el derecho al territorio es fundamental, porque sin él, no hay espacio en donde ellas y ellos se asienten a ejercer derechos fundamentales como el derecho a la vida y a la expresión de su cultura. 
-          </p>
-        </v-col>
-      </v-row>
-    </v-parallax>
 
   </v-content>
 </template>
@@ -336,12 +460,12 @@ export default {
     carousel: {
       lengua: 0,
       matriarquia: 0,
-      // territorio: 0
+      territorio: 0
     }, // indice del elemento en carrusel que se muestra,
     show: { // muestra/oculta información adicional sobre un bloque o área
       lengua: false,
       matriarquia: false,
-      // territorio: false
+      territorio: true
     },
     documentalesLengua: [ // documentales para sala de proyecciones (Lengua)
       {
@@ -353,7 +477,7 @@ export default {
         time: '40',
         genre: '',
         plot: 'A los 15 años abandoné mi hogar en Ñuu Savi, salí y recorrí mundos distintos al mío. Comencé mi formación como documentalista y, tras ello, el interés de aprender el idioma que habla mi familia, ya que me fue prohibido desde la infancia. Ahora que regreso, mi padre ha fallecido; y con él su lengua. En este documental hago una búsqueda de Tu’un Savi a través de sus hablantes.',
-        link: 'https://vimeo.com/677777101/08fb625c00',
+        // link: 'https://vimeo.com/677777101/08fb625c00',
         image: 'Lengua/Tu un savi/thumbnail_TUUN SAVI 03.png',
         color: 'indigo',
         language: 'Tu’un Savi',
@@ -588,6 +712,89 @@ export default {
         subtitle: 'Portugués',
         tags: ['', '']
       }
+    ],
+    documentalesTerritorio: [ // documentales para sala de proyecciones (Territorio)
+    // TODO: Falta atributo "tags"
+      { // 1
+        name: 'Equilibrio',
+        altName: '',
+        author: 'Olinda Yawar Muniz',
+        year: '2020',
+        country: 'Brasil',
+        time: '11',
+        genre: '',
+        plot: 'Cortometraje que representa la condición humana en el planeta Tierra. El discurso de Kaapora, una entidad espiritual indígena, guía la discusión crítica de la relación destructiva de nuestra civilización con el único planeta conocido que tiene soporte vital, y del cual nosotros mismos dependemos para continuar nuestra existencia como especie.',
+        link: 'https://vimeo.com/698195904',
+        image: 'Territorio/Equilibrio/Equilíbrio (1)_auto_x2.jpg',
+        color: 'indigo',
+        language: 'Portugués',
+        subtitle: '',
+        tags: ['', '']
+      },
+      { // 2
+        name: 'You are on Indian Land',
+        altName: '',
+        author: 'Michael Kanentakeron Mitchell',
+        year: '1969',
+        country: 'Canada',
+        time: '36',
+        genre: '',
+        plot: 'Lanzado en 1969, este documental fue una de las producciones más influyentes realizadas por Indian Film Crew (IFC), la primera unidad totalmente indígena en la NFB. Documenta una protesta de 1969 de Kanien\'kéhaka (Mohawk) de Akwesasne, un territorio que se extiende a ambos lados de la frontera entre Canadá y Estados Unidos. El documental se proyectó extensamente en todo el continente, lo que ayudó a movilizar una nueva ola de activismo indígena.',
+        link: 'https://www.nfb.ca/film/you_are_on_indian_land/',
+        image: 'Territorio/You are on Indian land/Screen Shot 2022-04-06 at 3.54.08 PM.jpg',
+        color: 'indigo',
+        language: 'Inglés',
+        subtitle: '',
+        tags: ['', '']
+      },
+      { // 3
+        name: 'Sembradores de agua y vida',
+        altName: '',
+        author: 'Sergio Julián Caballero',
+        year: '2010',
+        country: 'México',
+        time: '30',
+        genre: '',
+        plot: 'Este video documental comparte la experiencia de campesinos y campesinas con propuestas claras para darle de beber a la Tierra. Campesinos y campesinas de los distritos de Ocotlán y Zimatlán en los Valles Centrales del Estado de Oaxaca han conformado la “Coordinadora de Pueblos Unidos por la Defensa y el Cuidado del Agua” en la búsqueda de soluciones al problema del agua. Su amor por la Madre Tierra y su cosmovisión de respeto a la naturaleza, hace brotar de la fuente de sus manantiales de sabiduría. Los resultados son favorables, sin embargo, las instancias de gobierno se mantienen sordas e indiferentes, negando y violando así el derecho humano al agua.',
+        link: 'https://vimeo.com/101926556',
+        image: 'Territorio/Sembradores de agua y vida/Sembradores de agua y vida 3.jpg',
+        color: 'indigo',
+        language: 'Español, Zapoteco',
+        subtitle: '',
+        tags: ['', '']
+      },
+      { // 4
+        name: 'El mineral o la vida',
+        altName: '',
+        author: 'José Luis Matías Alonso, Ojo de Tigre/Comunicación Comunitaria',
+        year: '2015',
+        country: 'México',
+        time: '37',
+        genre: '',
+        plot: 'El Mineral o la Vida es la historia de resistencia y lucha de los pueblos originarios del estado de Guerrero, México, ante proyectos extractivos capitalistas del siglo XXI. Son los Na Savi, los Me´Phaa, los Nahuas que defienden su tierra y territorio de las grandes mineras canadienses e ingleses que son apoyadas por el gobierno federal.',
+        link: 'https://youtu.be/3RN7qfcUH0A',
+        image: 'Territorio/El mineral o la vida/viendo crater.jpg',
+        color: 'indigo',
+        language: 'Español',
+        subtitle: '',
+        tags: ['', '']
+      },
+      { // 5
+        name: 'Matses Muxan Akadakit',
+        altName: 'Festa da tatuagem Matis',
+        author: 'Povo Matis',
+        year: '2021',
+        country: 'Brasil',
+        time: '90',
+        genre: '',
+        plot: 'Nosotros, los jóvenes Matis, escuchamos a los mayores contar la historia de "la gente del mono churuco". Al principio, los monos lanudos machos comenzaron a bailar antes de huir hacia el bosque. Cuando regresaron, los monos churucos transmitieron esta celebración al pueblo Matis.',
+        link: 'https://drive.google.com/file/d/1qd0t1CxnIR545Xg16nx5qgxCsaEVPVJy/view?usp=sharing',
+        image: 'Territorio/Mates Muxan Akadakit/Foto_Matis_01.jpg',
+        color: 'indigo',
+        language: 'Matis, Portugués',
+        subtitle: '',
+        tags: ['', '']
+      },
     ],
     tab: null,
   }),
