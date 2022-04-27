@@ -25,22 +25,21 @@
             <span class="mr-2">{{ $t('header.territorio') }}</span>
         </v-btn>
 
-        <!-- <v-menu offset-y>
+        <v-menu offset-y>
             <template v-slot:activator="{ on, attrs }">
-            <v-btn
-                dark
-                v-bind="attrs"
-                v-on="on"
-            >
-                {{ $t('header.idioma') }}
-            </v-btn>
+                <v-btn dark v-bind="attrs" v-on="on" >
+                    <v-icon dark >
+                        mdi-translate
+                    </v-icon>
+                    <!-- {{ $t('header.idioma') }} -->
+                </v-btn>
             </template>
-            <v-list class="pointerCursor">
-            <v-list-item v-for="(item, index) in items" :key="index">
-                <v-list-item-title @click="switchLocale(item.lang)">{{ item.language }}</v-list-item-title>
-            </v-list-item>
+            <v-list class="pointerCursor" dark>
+                <v-list-item v-for="(item, index) in items" :key="index">
+                    <v-list-item-title @click="switchLocale(item.lang)">{{ item.language }}</v-list-item-title>
+                </v-list-item>
             </v-list>
-        </v-menu> -->
+        </v-menu>
 
         <!-- <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text >
             <span class="mr-2">Latest Release</span>
@@ -146,6 +145,10 @@ export default {
       {
         language: 'English',
         lang: 'en'
+      },
+      {
+        language: 'Português',
+        lang: 'pt'
       }
     ],
   }),
