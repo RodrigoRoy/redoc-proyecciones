@@ -337,11 +337,11 @@
                 <strong>Zenaida Pérez Gutiérrez</strong> (coordinadora del Programa de Mujeres Indígenas del Instituto de Liderazgo Simone de Beauvoir A.C.)
               </p>
               <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
-                <v-btn class="ma-2" color="red" dark href="https://www.youtube.com/c/REDOCInvestigaci%C3%B3n" target="_blank">
+                <v-btn class="ma-2" color="red" dark href="https://youtu.be/KHK6CMkimY0" target="_blank">
                   <v-icon large dark right class="ml-2 mr-4">mdi-youtube</v-icon>
                   ReDOC Investigación
                 </v-btn>
-                <v-btn class="ma-2" color="indigo" dark href="https://www.facebook.com/Institutomora" target="_blank">
+                <v-btn class="ma-2" color="indigo" dark href="https://www.facebook.com/Institutomora/videos/491801472626504" target="_blank">
                   <v-icon large dark right class="ml-2 mr-4">mdi-facebook</v-icon>
                   Instituto Mora
                 </v-btn>
@@ -377,9 +377,9 @@
                             <v-col sm="12" md="5" offset-md="1">
                               <!-- Información del documental -->
                               <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-lg-h4 text-xl-h4 font-weight-medium white--text">
-                                <a class="white--text text-decoration-underline" :href="documental.link" target="_blank">
+                                <!-- <a class="white--text text-decoration-underline" :href="documental.link" target="_blank"> -->
                                   {{ documental.name }}
-                                </a>
+                                <!-- </a> -->
                               </p>
                               <p v-if="documental.altName" class="text-subtitle-2 text-sm-subtitle-1 text-md-h6 text-lg-h6 text-xl-h6 font-weight-light white--text my-n2">
                                 {{ documental.altName }}
@@ -411,9 +411,9 @@
 
                             <!-- Imagen/animación del documental -->
                             <v-col sm="12" md="5" align="center" justify="center">
-                              <a :href="documental.link" target="_blank">
+                              <!-- <a :href="documental.link" target="_blank"> -->
                                 <v-img max-height="350" contain :src="require('@/assets/' + documental.image)"></v-img>
-                              </a>
+                              <!-- </a> -->
                             </v-col>
                           </v-row>
                         </v-container>
@@ -465,7 +465,7 @@ export default {
     show: { // muestra/oculta información adicional sobre un bloque o área
       lengua: false,
       matriarquia: false,
-      territorio: true
+      territorio: false,
     },
     documentalesLengua: [ // documentales para sala de proyecciones (Lengua)
       {
