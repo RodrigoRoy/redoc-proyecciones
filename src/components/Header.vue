@@ -35,9 +35,11 @@
                 </v-btn>
             </template>
             <v-list class="pointerCursor" dark>
-                <v-list-item v-for="(item, index) in items" :key="index">
-                    <v-list-item-title @click="switchLocale(item.lang)">{{ item.language }}</v-list-item-title>
-                </v-list-item>
+                <div v-for="(item, index) in items" :key="index">
+                    <v-list-item @click="switchLocale(item.lang)">
+                        <v-list-item-title>{{ item.language }}</v-list-item-title>
+                    </v-list-item>
+                </div>
             </v-list>
         </v-menu>
 
@@ -89,7 +91,7 @@
                 </v-list-item-title>
             </v-list-item>
 
-            <!-- <v-list-item>
+            <v-list-item>
                 <v-list-item-title>
                     <v-menu offset-y>
                         <template v-slot:activator="{ on, attrs }">
@@ -107,7 +109,7 @@
                         </v-list>
                     </v-menu>
                 </v-list-item-title>
-            </v-list-item> -->
+            </v-list-item>
 
             <!-- <v-list-item>
                 <v-list-item-title>
@@ -169,5 +171,6 @@ export default {
 }
 .pointerCursor :hover{
   background-color: #E4E0E0;
+  color: black;
 }
 </style>
