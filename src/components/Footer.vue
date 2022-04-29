@@ -3,7 +3,7 @@
      <v-layout row wrap align-center justify-center class="mb-4">
         <v-flex xs12>
             <div class="d-flex grey--text text--darken-2 ml-4 text-center justify-center">
-                <p class="text-body-1 mt-6 mb-6">
+                <p class="text-body-1 mt-6 mb-4">
                     <span class="text-h6">{{ $t('footer.encabezado') }}</span> <br>
                     Sarah Shamash <span class="font-weight-light">(Universidad de Columbia Británica) </span><br>
                     Lilia García Torres <span class="font-weight-light">(LAIS-Instituto Mora) </span><br>
@@ -13,6 +13,15 @@
                 </p>
             </div>
         </v-flex> 
+        <v-flex xs12>
+            <div class="d-flex grey--text text--darken-3 text-center justify-center">
+                <p class="text-body-1 mb-6">
+                    <span class="text-h6">{{ $t('footer.desarrolloWeb') }}</span> <br>
+                    Rodrigo Colín <span class="font-weight-light">(LAIS-Instituto Mora) </span><br>
+                    Emmanuel Hernández <span class="font-weight-light">(LAIS-Instituto Mora) </span>
+                </p>
+            </div>
+        </v-flex>
         <v-flex xs4 sm2>
             <div class="d-flex grey--text text--darken-2 ml-4 text-center justify-center">
             <a href="https://redocinvestigacion.com/">

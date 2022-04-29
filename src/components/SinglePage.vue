@@ -52,7 +52,7 @@
               <p class="text-body-2 text-sm-body-2 text-md-body-1 text-lg-body-1 text-xl-body-1">
                 <strong>Guillermo Monteforte</strong> ({{ $t('salaProyecciones1.conversatorio.moderador') }})<br/> 
                 <strong>Nute Kuijin</strong> ({{ $t('salaProyecciones1.conversatorio.realizadorDe') }} <em>Tu'un Savi</em>)<br/>
-                <strong>Henry Cuesta</strong> ({{ $t('salaProyecciones1.conversatorio.cimarronesProducciones') }} <em>Guardianas resilientes desde el cuerpo y el alma</em>)<br/>
+                <strong>Heny Cuesta</strong> ({{ $t('salaProyecciones1.conversatorio.cimarronesProducciones') }} <em>Guardianas resilientes desde el cuerpo y el alma</em>)<br/>
                 <strong>Sergio Julián Caballero</strong> ({{ $t('salaProyecciones1.conversatorio.realizadorDe') }} <em>Justicia sin palabras</em>)<br/>
                 <strong>Gabriel Sánchez Cruz</strong> ({{ $t('salaProyecciones1.conversatorio.interpreteCEPIADET') }})
               </p>
@@ -518,10 +518,7 @@ export default {
   opacity: 0.4;
 }
 
-/* Tamaño de letra para cada sección */
-.my-section{
-  font-size: 1.2rem !important;
-}
+/* Altura para carrusel */
 .carruselHeight{
   height: 1000px;
 }

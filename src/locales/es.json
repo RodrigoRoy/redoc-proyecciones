@@ -213,7 +213,7 @@
           "link": "https://www.nfb.ca/film/mother_of_many_children/",
           "image": "Matriarquía/Mother of Many Children/Screen Shot 2022-02-21 at 11.33.19 AM.jpg",
           "color": "indigo",
-          "language": "Inuit, cree",
+          "language": "Inuit, Cree",
           "subtitle": "Inglés",
           "tags": ["", ""]
         },
@@ -387,6 +387,7 @@
     "salaProyecciones": "Sala de proyecciones"
   },
   "footer": {
-      "encabezado": "Curaduría fílmica y organización"
+      "encabezado": "Curaduría fílmica y organización",
+      "desarrolloWeb": "Desarrollo web"
   }
 }

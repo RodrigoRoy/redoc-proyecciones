@@ -44,7 +44,7 @@
         },
         {
           "name": "Tejiendo Resistencia, trenzador",
-          "altName": "Guardiães. Resiliente no corpo e na alma",
+          "altName": "Guardianas. Resilientes desde el cuerpo y el alma",
           "author": "Heny Cuesta",
           "year": "2020",
           "country": "Colômbia",
@@ -76,7 +76,7 @@
         },
         {
           "name": "O verbo se fez carne",
-          "altName": "A Palavra tornou-se carne",
+          "altName": "A palavra tornou-se carne",
           "author": "Ziel Karapotó",
           "year": "2019",
           "country": "Brasil",
@@ -95,7 +95,7 @@
           "altName": "A emenda",
           "author": "Kevin Papatie",
           "year": "2007",
-          "country": "",
+          "country": "Canadá",
           "time": "4",
           "genre": "",
           "plot": "Na comunidade Kitcisakik, a língua Algonquin está a morrer, apenas quatro gerações depois de a política de assimilação do governo federal ter entrado em vigor.",
@@ -136,7 +136,7 @@
           "color": "purple",
           "language": "Matis",
           "subtitle": "Português",
-          "tags": ["Intergeneracional"]
+          "tags": ["Intergeracional"]
         }
       ]
     },
@@ -155,7 +155,7 @@
       "documentalesMatriarquia": [
         {
           "name": "Her silent life",
-          "altName": "A sua vida silenciosa",
+          "altName": "Sua vida silenciosa",
           "author": "Lindsay McIntyre",
           "year": "2012",
           "country": "Canadá",
@@ -187,7 +187,7 @@
         },
         {
           "name": "Ati-wîcahsin (It’s Getting Easier)",
-          "altName": "Ati-wîcahsin (It's getting easier and easier)",
+          "altName": "Ati-wîcahsin (Está ficando mais fácil)",
           "author": "Tessa Desnomie",
           "year": "2007",
           "country": "Canadá",
@@ -213,7 +213,7 @@
           "link": "https://www.nfb.ca/film/mother_of_many_children/",
           "image": "Matriarquía/Mother of Many Children/Screen Shot 2022-02-21 at 11.33.19 AM.jpg",
           "color": "indigo",
-          "language": "Inuit, cree",
+          "language": "Inuit, Cree",
           "subtitle": "Inglês",
           "tags": ["", ""]
         },
@@ -234,7 +234,7 @@
           "tags": ["", ""]
         },
         {
-          "name": "Cartas a Anne",
+          "name": "Cartas para Ana",
           "altName": "",
           "author": "Lina Gaitán",
           "year": "2021",
@@ -251,8 +251,8 @@
           "tags": ["", ""]
         },
         {
-          "name": "O por nascer",
-          "altName": "",
+          "name": "Los que están por nacer",
+          "altName": "Os por nascer",
           "author": "Yovegami Ascona Mora, Sinhué Ascona Mora",
           "year": "2018",
           "country": "México",
@@ -268,7 +268,7 @@
         },
         {
           "name": "Yãmĩyhex: As mulheres espírito",
-          "altName": "Yãmĩyhex: O espírito feminino",
+          "altName": "",
           "author": "Sueli Maxakali, Isael Maxakali",
           "year": "2019",
           "country": "Brasil",
@@ -382,11 +382,12 @@
     "mensajesGenerales": {
       "masInformacion": "Mais informações",
       "conversatorio": "Discussão online",
-      "redocInvestigacion": "Pesquisa ReDOC",
+      "redocInvestigacion": "ReDOC Investigación",
       "institutoMora": "Instituto Mora",
       "salaProyecciones": "Sala de projecção"
     },
     "footer": {
-        "encabezado": "Curadoria e organização do filme"
+        "encabezado": "Curadoria e organização do filme",
+        "desarrolloWeb": "Desenvolvimento web"
     }
   }

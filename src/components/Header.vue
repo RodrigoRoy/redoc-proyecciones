@@ -1,13 +1,6 @@
 <template>
-    <v-app-bar app dark dense elevation="8" hide-on-scroll> <!--color="green" -->
+    <v-app-bar app dark dense elevation="10"> <!--hide-on-scroll -->
       <v-img src="@/assets/logo_ReDOC.png" href="https://redocinvestigacion.com/" max-width="90" contain class=" mr-2"></v-img>
-      <!-- <span class="mr-2 text-capitalize font-weight-medium text-h5">Lenguas maternas</span> -->
-      
-      <!-- <div class="d-flex align-center">
-        <v-img alt="Vuetify Logo" class="shrink mr-2" contain src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png" transition="scale-transition" width="40" />
-        <v-img alt="Vuetify Name" class="shrink mt-1 hidden-sm-and-down" contain min-width="100" src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png" width="100" />
-      </div> -->
-
       <v-spacer></v-spacer>
 
       <!-- Nav web -->
@@ -25,100 +18,66 @@
             <span class="mr-2">{{ $t('header.territorio') }}</span>
         </v-btn>
 
-        <v-menu offset-y>
+        <v-menu open-on-hover offset-y>
             <template v-slot:activator="{ on, attrs }">
-                <v-btn dark v-bind="attrs" v-on="on" >
-                    <v-icon dark >
-                        mdi-translate
-                    </v-icon>
-                    <!-- {{ $t('header.idioma') }} -->
+                <v-btn v-bind="attrs" v-on="on" dark>
+                    <v-icon> mdi-translate </v-icon>
                 </v-btn>
             </template>
-            <v-list class="pointerCursor" dark>
-                <div v-for="(item, index) in items" :key="index">
+            <v-list dark>
+                <div v-for="(item, index) in items" :key="index" link>
                     <v-list-item @click="switchLocale(item.lang)">
                         <v-list-item-title>{{ item.language }}</v-list-item-title>
                     </v-list-item>
                 </div>
             </v-list>
         </v-menu>
-
-        <!-- <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text >
-            <span class="mr-2">Latest Release</span>
-            <v-icon>mdi-open-in-new</v-icon>
-        </v-btn> -->
       </div>
 
       <!-- Version movil -->
       <div class="d-md-none">
 
-        <v-menu offset-y>
+        <v-menu v-model="movilMenu" :close-on-content-click="false" offset-y>
             <template v-slot:activator="{ on, attrs }">
-            <v-btn
-                v-bind="attrs"
-                v-on="on"
-            >
-               <v-app-bar-nav-icon></v-app-bar-nav-icon>
-            </v-btn>
+                <v-btn v-bind="attrs" v-on="on">
+                    <v-icon> mdi-menu </v-icon>
+                </v-btn>
             </template>
-            <v-list class="pointerCursor">
-            <v-list-item>
-                <v-list-item-title>
-                    <v-btn text @click="$vuetify.goTo('#parallax1', options)">
-                        <span class="mr-2">{{ $t('header.inicio') }}</span>
-                    </v-btn>
-                </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-                <v-list-item-title>
-                    <v-btn text @click="$vuetify.goTo('#parallax2', options)">
-                        <span class="mr-2">{{ $t('header.lenguasMaternas') }}</span>
-                    </v-btn>
-                </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-                <v-list-item-title>
-                    <v-btn text @click="$vuetify.goTo('#parallax3', options)">
-                        <span class="mr-2">{{ $t('header.matriarquia') }}</span>
-                    </v-btn>
-                </v-list-item-title>
-            </v-list-item>
-            <v-list-item>
-                <v-list-item-title>
-                    <v-btn text @click="$vuetify.goTo('#parallax4', options)">
-                        <span class="mr-2">{{ $t('header.territorio') }}</span>
-                    </v-btn>
-                </v-list-item-title>
-            </v-list-item>
+            <v-list dark>
+                <v-list-item @click="$vuetify.goTo('#parallax1', options);movilMenu = false;">
+                    <v-list-item-title >
+                        {{ $t('header.inicio') }}
+                    </v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="$vuetify.goTo('#parallax2', options);movilMenu = false;">
+                    <v-list-item-title>
+                        {{ $t('header.lenguasMaternas') }}
+                    </v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="$vuetify.goTo('#parallax3', options);movilMenu = false;">
+                    <v-list-item-title>
+                        {{ $t('header.matriarquia') }}
+                    </v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="$vuetify.goTo('#parallax4', options);movilMenu = false;">
+                    <v-list-item-title>
+                        {{ $t('header.territorio') }}
+                    </v-list-item-title>
+                </v-list-item>
 
-            <v-list-item>
-                <v-list-item-title>
-                    <v-menu offset-y>
-                        <template v-slot:activator="{ on, attrs }">
-                        <v-btn
-                            v-bind="attrs"
-                            v-on="on"
-                        >
+                <v-list-group :value="false" prepend-icon="mdi-translate" active-class="pink--text text--lighten-2">
+                    <template v-slot:activator>
+                        <v-list-item-title>
                             {{ $t('header.idioma') }}
-                        </v-btn>
-                        </template>
-                        <v-list class="pointerCursor">
-                        <v-list-item v-for="(item, index) in items" :key="index">
-                            <v-list-item-title @click="switchLocale(item.lang)">{{ item.language }}</v-list-item-title>
-                        </v-list-item>
-                        </v-list>
-                    </v-menu>
-                </v-list-item-title>
-            </v-list-item>
+                        </v-list-item-title>
+                    </template>
 
-            <!-- <v-list-item>
-                <v-list-item-title>
-                    <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text >
-                        <span class="mr-2">Latest Release</span>
-                        <v-icon>mdi-open-in-new</v-icon>
-                    </v-btn>
-                </v-list-item-title>
-            </v-list-item> -->
+                    <v-list-item v-for="(item, index) in items" :key="index" link>
+                        <v-list-item-title @click="switchLocale(item.lang);movilMenu = false;">
+                            {{ item.language }}
+                        </v-list-item-title>
+                    </v-list-item>
+                </v-list-group>
             </v-list>
         </v-menu>
         
@@ -138,6 +97,8 @@ export default {
       offset: 0,
       easing: 'easeInOutCubic',
     },
+    // Menú exclusivo de vista en moviles
+    movilMenu: false,
     // Idiomas del sistema
     items: [
       {
@@ -166,11 +127,4 @@ export default {
 </script>
 
 <style scoped>
-.pointerCursor{
-  cursor: pointer;
-}
-.pointerCursor :hover{
-  background-color: #E4E0E0;
-  color: black;
-}
 </style>
